@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <title>Shitblog</title>
+  </head>
+  <body class="w-screen">
+    <nav class="bg-gray-800 text-white p-4 font-bold">
+      <ul class="flex justify-between">
+        <li>
+          <a href="{% url 'entrada_list' %}" class="hover:text-gray-300"
+            >Inicio</a
+          >
+        </li>
+        <li>
+          <a href="{% url 'entrada_new' %}" class="hover:text-gray-300"
+            >+ entrada</a
+          >
+        </li>
+      </ul>
+    </nav>
+    {% block content %}{% endblock %}
+  </body>
+  <script src="https://cdn.tailwindcss.com"></script>
+</html>

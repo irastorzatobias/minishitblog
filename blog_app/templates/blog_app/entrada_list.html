@@ -1,0 +1,72 @@
+{% extends 'blog_app/base.html' %} {% block content %}
+<div class="m-2">
+  <p class="text-xl font-bold mb-4">Lista de entradas</p>
+  <div class="flex flex-col">
+    {% for entrada in object_list %}
+    <div class="p-2 mb-2 w-auto max-w-lg border border-gray-200">
+      <h2 class="text-2xl font-bold mb-1">{{ entrada.titulo }}</h2>
+      <p class="text-gray-600" style="word-wrap: break-word">
+        {{ entrada.contenido }}
+      </p>
+      <p>Comentarios: {{ entrada.comentarios_count }}</p>
+
+        {% for comentario in entrada.comentario_set.all %}
+        <div
+          class="border border-gray-300 rounded-md p-2 mt-2 flex flex-row justify-between align-center"
+        >
+          <div>
+            <p>{{ comentario.texto }}</p>
+            <p>Publicado por: {{ comentario.autor }}</p>
+          </div>
+          <form
+            method="post"
+            action="{% url 'comentario_delete' comentario.pk %}"
+          >
+            {% csrf_token %}
+            <button
+              type="submit"
+              class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+            >
+              Borrar
+            </button>
+          </form>
+        </div>
+        {% endfor %}
+
+      <div class="flex flex-row gap-2 justify-between items-center mt-2">
+        <form
+          method="post"
+          action="{% url 'comentario_new' entrada.pk %}"
+          class="flex flex-row gap-2 align-center"
+        >
+          {% csrf_token %}
+          <input
+            name="texto"
+            class="border border-gray-300 rounded-md p-1 mt-2"
+            required="required"
+            placeholder="Escribe un comentario"
+          />
+          <button
+            type="submit"
+            class="ri-add-line bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded mt-2"
+          ></button>
+        </form>
+        <div class="flex flex-row gap-2">
+          <form method="post" action="{% url 'entrada_delete' entrada.pk %}">
+            {% csrf_token %}
+            <button
+              type="submit"
+              class="ri-delete-bin-fill bg-red-500 hover:bg-red-700 text-white font-bold px-2 py-1 rounded"
+            ></button>
+          </form>
+          <a
+            href="{% url 'entrada_edit' entrada.pk %}"
+            class="ri-edit-2-fill bg-amber-500 hover:bg-amber-700 text-white font-bold rounded px-2 py-1"
+          ></a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock content %}
