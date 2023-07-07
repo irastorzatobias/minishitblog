@@ -1,6 +1,5 @@
 from django.urls import path
 from .views import EntradaListView, EntradaCreateView, EntradaDeleteView, EntradaUpdateView, ComentarioCreateView, ComentarioDeleteView
-from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('', EntradaListView.as_view(), name='entrada_list'),
