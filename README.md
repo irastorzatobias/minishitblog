@@ -36,7 +36,7 @@ Este proyecto es una implementación básica de un miniblog en Django, centrado 
     user: user
     password: user
    ```
-6. Testea los endpoints!
+6. Testea los endpoints! (Si no estas logeado es posible que no funcionen)
 
 # Endpoints
 
