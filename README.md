@@ -5,7 +5,7 @@ Este proyecto es una implementación básica de un miniblog en Django, centrado 
 ## Configuración del entorno
 
 1. Clona el repositorio en tu máquina local.
-2. Mueve al directorio y crea y activa un entorno virtual:
+2. Movete al directorio del repo y crea y activa un entorno virtual:
 
    ```bash
    python3 -m venv myenv

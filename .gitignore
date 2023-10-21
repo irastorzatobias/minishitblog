@@ -1,1 +1,4 @@
 .vscode/
+myenv/
+blog/__pycache__/
+blog_app/__pycache__/
