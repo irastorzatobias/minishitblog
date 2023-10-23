@@ -2,6 +2,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.views.generic import ListView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
+from django.http import HttpResponseForbidden
 from .forms import EntradaForm
 from .models import Entrada, Comentario
 
@@ -30,6 +31,12 @@ class EntradaDeleteView(LoginRequiredMixin, DeleteView):
     login_url = '/login/'
     model = Entrada
     success_url = reverse_lazy('entrada_list')
+
+    def dispatch(self, request, *args, **kwargs):
+        obj = self.get_object()
+        if obj.autor != self.request.user:
+            return HttpResponseForbidden("No tienes permiso para borrar esta entrada.")
+        return super().dispatch(request, *args, **kwargs)
 
 class ComentarioCreateView(LoginRequiredMixin, CreateView):
     login_url = '/login/'
