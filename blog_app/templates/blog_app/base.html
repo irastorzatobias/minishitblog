@@ -12,16 +12,27 @@
   <body class="w-screen">
     <nav class="bg-gray-800 text-white p-4 font-bold">
       <ul class="flex justify-between">
-        <li>
-          <a href="{% url 'entrada_list' %}" class="hover:text-gray-300"
-            >Inicio</a
-          >
-        </li>
-        <li>
-          <a href="{% url 'entrada_new' %}" class="hover:text-gray-300"
-            >+ entrada</a
-          >
-        </li>
+        {% if user.is_authenticated %}
+        <a href="{% url 'entrada_list' %}" class="text-white font-bold"> Inicio </a>
+        <div class="flex flex-row gap-2">
+          <li>
+            <span
+              >Bienvenido,
+              <span class="font-semibold text-blue-300"
+                >{{ user.username }}</span
+              ></span
+            >
+          </li>
+          <li>
+            <a
+              href="{% url 'entrada_new' %}"
+              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded"
+            >
+              + entrada
+            </a>
+          </li>
+        </div>
+        {% endif %}
       </ul>
     </nav>
     {% block content %}{% endblock %}
