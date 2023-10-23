@@ -2,7 +2,7 @@ from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from .views import EntradaListView, EntradaCreateView, EntradaDeleteView, EntradaUpdateView, ComentarioCreateView, ComentarioDeleteView
 from .api import CategoriaViewSet, EntradaViewSet, ComentarioViewSet, CustomUserViewSet
-from django.contrib.auth.views import LoginView
+from django.contrib.auth.views import LoginView, LogoutView
 
 router = DefaultRouter()
 router.register(r'categorias', CategoriaViewSet)
@@ -18,5 +18,6 @@ urlpatterns = [
     path('entrada/<int:pk>/comentario/new/', ComentarioCreateView.as_view(), name='comentario_new'),
     path('comentario/<int:pk>/delete/', ComentarioDeleteView.as_view(), name='comentario_delete'),
     path('login/', LoginView.as_view(template_name="login.html"),name='login'),
+    path('logout/', LogoutView.as_view(next_page='/login/'), name='logout'),
     path('api/', include(router.urls)),
 ]
