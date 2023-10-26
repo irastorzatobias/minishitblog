@@ -40,7 +40,7 @@ Este proyecto es una implementación básica de un miniblog en Django, centrado 
 
 # Endpoints
 
-- **Listar entradas**
+-  **Listar entradas**
 
   - URL: `/`
   - Vista: `EntradaListView`
@@ -113,7 +113,7 @@ Ninguno
 
 # 📚 Categoría
 
-### Listar Todas las Categorías
+###  📌 Listar Todas las Categorías
 
 #### Endpoint
 
@@ -139,7 +139,7 @@ Ninguno
   ]
   ```
 
-### Crear una Nueva Categoría
+### ➕ Crear una Nueva Categoría
 
 #### Endpoint
 
@@ -166,7 +166,7 @@ Ninguno
   }
   ```
 
-### Actualizar una Categoría
+###  🔄 Actualizar una Categoría
 
 #### Endpoint
 
@@ -193,7 +193,7 @@ Ninguno
   }
   ```
 
-### Eliminar una Categoría
+### ❌ Eliminar una Categoría
 
 #### Endpoint
 
@@ -220,7 +220,7 @@ Ninguno
 ---
 # 📝 Entrada
 
-### Listar Todas las Entradas
+###  📌 Listar Todas las Entradas
 
 #### Endpoint
 
@@ -249,7 +249,7 @@ Ninguno
   ]
   ```
 
-### Crear una Nueva Entrada
+### ➕ Crear una Nueva Entrada
 
 #### Endpoint
 
@@ -281,7 +281,7 @@ Ninguno
   }
   ```
 
-### Actualizar una Entrada
+###  🔄 Actualizar una Entrada
 
 #### Endpoint
 
@@ -313,7 +313,7 @@ Ninguno
   }
   ```
 
-### Eliminar una Entrada
+### ❌ Eliminar una Entrada
 
 #### Endpoint
 
@@ -338,7 +338,7 @@ Ninguno
 ---
 # 💬 Comentario
 
-### Listar Todos los Comentarios
+###  📌 Listar Todos los Comentarios
 
 #### Endpoint
 
@@ -366,7 +366,7 @@ Ninguno
   ]
   ```
 
-### Crear un Nuevo Comentario
+### ➕ Crear un Nuevo Comentario
 
 #### Endpoint
 
@@ -396,7 +396,7 @@ Ninguno
   }
   ```
 
-### Actualizar un Comentario
+###  🔄 Actualizar un Comentario
 
 #### Endpoint
 
@@ -425,7 +425,7 @@ Ninguno
   }
   ```
 
-### Eliminar un Comentario
+### ❌ Eliminar un Comentario
 
 #### Endpoint
 
@@ -449,7 +449,7 @@ Ninguno
 ---
 # 👤 Usuario
 
-### Listar Todos los Usuarios
+###  📌 Listar Todos los Usuarios
 
 #### Endpoint
 
@@ -476,7 +476,7 @@ Ninguno
   ]
   ```
 
-### Crear un Nuevo Usuario
+### ➕ Crear un Nuevo Usuario
 
 #### Endpoint
 
@@ -506,7 +506,7 @@ Ninguno
   }
   ```
 
-### Actualizar un Usuario
+###  🔄 Actualizar un Usuario
 
 #### Endpoint
 
@@ -535,7 +535,7 @@ Ninguno
   }
   ```
 
-### Eliminar un Usuario
+### ❌ Eliminar un Usuario
 
 #### Endpoint
 
